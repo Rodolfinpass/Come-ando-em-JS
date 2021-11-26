@@ -1,0 +1,55 @@
+nav a { /* ancôra dentro do nav */
+    text-decoration: none;
+    color: wheat;
+    display: block;
+    margin: 5px;
+}
+header { /* header em volta do nav*/
+    height: 100%;
+    padding-left: 10px;
+    width: auto;
+    position: fixed;
+    background-color: blue;
+    text-align: center;
+}
+caption { /* caption dentro da tabela (título da tabela)*/
+    font: normal 20pt Arial;
+    margin-top: 30px;
+    
+}
+table { /* tabela */
+    border: black solid;
+    border-collapse: collapse;
+    border-width: 1px;
+    width: 80%;
+    margin-left: 200px;
+}
+thead { /* linha  do cabeçalho da tabela */
+    background-color: rgb(151, 61, 235);
+}
+th { /* coluna do cabeçalho */
+    text-align: left;
+}
+tr { /* linha da tabela */
+    height: 30px;
+}
+
+tr.vivo {
+    background-color: rgb(218, 210, 210);
+}
+tr.morto {
+    background-color: white;
+}
+table th, table td {
+    padding: 12px 15px;
+}
+div#cabeca {
+    margin-left: 150px;
+}
+div#obj {
+    font: normal 20pt Arial;
+}
+div#sup {
+    background-color: yellow;
+    
+}

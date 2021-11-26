@@ -1,0 +1,153 @@
+<!DOCTYPE html> <!--23/08/2021-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        fieldset#mierda {
+            text-align: center;
+            background-color: white;
+            width: 600px;
+            margin: auto;
+            border: solid;
+        }
+        p#marca {
+            text-align: center;
+            font: normal 12pt Arial;
+        }
+        div#rap {
+            font-size: 13px;
+            padding-left: 1138px;
+        }
+        input {
+            height: 20px;
+        }
+        select#dois {
+            height: 26px;
+            width: 177px;
+        }
+    </style>
+</head>
+<body>
+    <div id="rap">*Cotação proveniente do dia 23/08/2021</div>
+    <fieldset id="mierda">
+    <h1>Conversor de moeda (BRL⇄USD)</h1> <br>
+    
+    <input type="number" id="um" oninput="DigiCima()" value="1" onfocus="javascript:(this.value=='1'?this.value = '':null);" 
+    onblur="javascript:(this.value==''?this.value = '1':null);"/> <!--code q eu copiei da internet q serve pra exibir um valor no input e qnd se começa a digitar, o valor desaparece-->
+    ⇄
+    <select id="dois" onblur="testando()">
+        <option value="Dólar (USD)">Dólar (USD)</option>
+        <option value="Real (BRL)">Real (BRL)</option>
+        </select> <br> <br>
+    <input type="number" id=tres oninput="DigiBaixo()" value="5.40" onfocus="javascript:(this.value=='5.40'?this.value = '':null);" 
+    onblur="javascript:(this.value==''?this.value = '5.40':null);"/>
+    ⇄
+    <input id=quatro value="Real (BRL)"> <br> <br> <br>
+    <div id=obj></div>
+    </fieldset>
+    <p id="marca">&copy;<strong>RodolfoDevs</strong></p>
+    <script>
+        
+        var jao = ''
+
+        function testando() {
+
+            var primeiro = document.getElementById('um')
+            var segundo = String(document.getElementById('dois').value)
+            var terceiro = document.getElementById('tres')
+
+        if (segundo === 'Dólar (USD)') {
+
+            document.getElementById('quatro').value='Real (BRL)'
+
+            primeiro.removeAttribute("value")
+            primeiro.removeAttribute("onfocus")
+            primeiro.removeAttribute("onblur")
+            primeiro.setAttribute("value", "1")
+            primeiro.setAttribute("onfocus","javascript:(this.value=='1'?this.value = '':null)")
+            primeiro.setAttribute("onblur","javascript:(this.value==''?this.value = '1':null)")
+
+            terceiro.removeAttribute("value")
+            terceiro.removeAttribute("onfocus")
+            terceiro.removeAttribute("onblur")
+            terceiro.setAttribute("value", "5.40")
+            terceiro.setAttribute("onfocus","javascript:(this.value=='5.40'?this.value = '':null)")
+            terceiro.setAttribute("onblur","javascript:(this.value==''?this.value = '5.40':null)")
+
+            jao = 'biju'
+
+        } else if (segundo === 'Real (BRL)') {
+           
+            document.getElementById('quatro').value='Dólar (USD)'
+
+            primeiro.removeAttribute("value")
+            primeiro.removeAttribute("onfocus")
+            primeiro.removeAttribute("onblur")
+            primeiro.setAttribute("value", "1")
+            primeiro.setAttribute("onfocus","javascript:(this.value=='1'?this.value = '':null)")
+            primeiro.setAttribute("onblur","javascript:(this.value==''?this.value = '1':null)")
+
+            terceiro.removeAttribute("value")
+            terceiro.removeAttribute("onfocus")
+            terceiro.removeAttribute("onblur")
+            terceiro.setAttribute("value", "0.19")
+            terceiro.setAttribute("onfocus","javascript:(this.value=='0.19'?this.value = '':null)")
+            terceiro.setAttribute("onblur","javascript:(this.value==''?this.value = '0.19':null)")
+
+            jao = 'ratao'
+
+        }
+        }
+
+        function DigiCima() {
+
+            var segundo = String(document.getElementById('dois').value)
+
+        if (segundo === 'Dólar (USD)' && jao === '' || jao === 'biju') { // acionado quando for DÓLAR, transformando DÓLAR pra REAL
+        
+            var primeiro = Number(document.getElementById('um').value)
+
+            var res = (primeiro * 5.402382).toFixed(2)
+            document.getElementById('tres').value= `${res}`
+
+        } else { // acionado quando for REAL, transformando REAL pra DÓLAR
+
+            var primeiro = Number(document.getElementById('um').value)
+
+            var res = (primeiro / 5.402382).toFixed(2)
+            document.getElementById('tres').value= `${res}`
+
+        }
+        }
+
+        function DigiBaixo() {
+
+            var segundo = String(document.getElementById('dois').value)
+
+        if (segundo === 'Dólar (USD)'  && jao === '' || jao === 'biju') { // acionado quando for DÓLAR, transformando REAL pra DÓLAR
+
+            var terceiro = Number(document.getElementById('tres').value)
+
+            var les = (terceiro / 5.402382).toFixed(2)
+            document.getElementById('um').value= `${les}`
+
+        }
+        
+        if (segundo === 'Real (BRL)') { // acionado quando for REAL, transformando DÓLAR pra REAL
+
+            var terceiro = Number(document.getElementById('tres').value)
+
+            var les = (terceiro * 5.402382).toFixed(2)
+            document.getElementById('um').value= `${les}`
+
+        }
+        } 
+    </script>
+</body>
+</html>

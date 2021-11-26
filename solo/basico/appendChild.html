@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!--code usando createElement, setAttribute e appendChild pela primeira vez-->
+</head>
+<body id="dentro">
+    <h1 id="so" onclick="teste()">Olá</h1> <br>
+    
+    <script>
+        function teste() {
+        var unico = document.getElementById('so')
+        unico.innerText = 'Canvas'
+        
+
+        var input = document.createElement('input') // 3 passos para adicionar um elemento à árvore DOM por meio de JavaScript, são eles, respectivamente: criar o elemento usando o createElement, configurar e adicionar seus atributos por meio do setAttribute e por fim, adicionar à árvore DOM (documento, HTML) com o appendChild
+        input.setAttribute("value", "Robin")
+
+        var onde = document.getElementById('dentro')
+        onde.appendChild(input) // appendChild signica dentro, a var dentro do parenteses a seguir, indicara dentro de qual filho será inserido o novo elemento posteriormente adicionado
+        }
+    </script>
+</body>
+</html>

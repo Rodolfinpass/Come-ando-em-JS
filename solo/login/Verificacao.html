@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!--Finalizado e FORMATADO em 31/08/2021-->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to left, rgb(55, 27, 155), rgb(53, 21, 168), rgb(13, 31, 190));
+            color: white;
+        }
+
+        p#marca {
+            text-align: center;
+            font: normal 12pt Arial;
+        }
+
+        div#sorte {
+            margin-left: 120px;
+        }
+
+        div#titu {
+            margin-top: 3px;
+            text-align: center;
+            font: normal 17pt Arial;
+        }
+        fieldset#ana {
+
+            margin: auto;
+            width: 500px;
+            height: 140px;
+            margin-top: 30px; 
+
+        }
+        input#logar {
+            margin-top: 20px;
+        }
+
+        input#espe {
+            width: 177px;
+            margin-left: 49px;
+        }
+
+        input {
+            margin: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <fieldset id=ana>
+
+        <div id="titu">Entrar</div>
+
+        <div id="sorte">
+            Login:<input id="logar"> <br>
+            Senha:<input id="senha"> <br>
+            <input type="submit" id="espe" value="Logar" onclick="checagem()">
+        </div>
+
+    </fieldset>
+
+    <p id="marca">&copy; <strong>RodolfoDevs</strong></p>
+
+    <script>
+
+        function checagem() {
+
+            var confer1 = String(document.getElementById('logar').value)
+            var confer2 = String(document.getElementById('senha').value)
+
+            var futLogin = localStorage.getItem('infLogin')
+            var futSenha = localStorage.getItem('infSenha')
+            
+            if (confer1 === futLogin && confer2 === futSenha) {
+
+                window.location.href = "Segunda.html"
+
+            } else {
+
+            window.alert(`Email e/ou senha incorretos. Por favor, tente novamente.`)
+                
+            }  
+        }
+    </script>
+</body>
+</html>

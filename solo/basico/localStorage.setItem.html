@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+
+
+    </style>
+</head>
+<body>
+
+    <p id="obj">Olá</p>
+    <input type="text" id="inpe"> 
+    <input type="submit" onclick="clique()">
+    <input type="submit" value="Próxima página" onclick="prox()"> <br> <br>
+    <div>Escreve algum valor no input.</div>
+    <div>Quando clicar no "Enviar", o valor será salvo e alocado no localStorage e o "Olá" será substituido por: Tudo bem, ${valor inserido}?</div>
+    <div>Quando clicar no "próxima página", será redirecionado para outra documento html.</div>
+    <div>Continua...</div>
+    <script>
+
+        var txt = document.getElementById('obj')
+        
+
+        function clique() {
+
+            var conte = String(document.getElementById('inpe').value)
+            txt.innerHTML = `Tudo bem, <strong>${conte}</strong>?`
+            localStorage.setItem('cristo', document.getElementById('inpe').value)
+        }
+        function prox() {
+
+            location.href = 'recebe.html'
+
+        }
+
+    </script>
+</body>
+</html>

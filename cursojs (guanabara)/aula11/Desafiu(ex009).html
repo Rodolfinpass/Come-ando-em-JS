@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste de nacionalidade</h1>
+    Nasci em: <input type="text" name="nacio" id="nacio">
+    <input type="button" value="Verificar" onclick="check()">
+    <p>Mora no Brasil? <input type="checkbox">
+    <p id=res>
+        <script>
+            function check() {
+                var nac = window.document.getElementById('nacio')
+                var div1 = window.document.getElementById('res')
+                var nacs = String(nac.value)
+                div1.innerHTML = `O seu país é ${nacs}`
+                if (nacs == 'Brasil') {
+                    div1.innerHTML = 'Você é <strong>brasileiro</strong>'
+                }else{ div1.innerHTML = 'Você é <strong>estrangeiro</strong>'
+                }    
+            }
+        </script>
+
+</body>
+</html>

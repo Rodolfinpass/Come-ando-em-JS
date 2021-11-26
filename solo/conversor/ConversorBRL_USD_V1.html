@@ -1,0 +1,55 @@
+<!DOCTYPE html> <!--17/08/2021-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor BRL-USD V1</title>
+    <style>
+        div#marca {
+            padding-top: 388px;
+            font: normal 12pt Arial;
+        }
+        div#rap {
+           font-size: 13px;
+           padding-left: 1138px;
+        }
+    </style>
+</head>
+<body>
+    <div id="rap">*Cotação proveniente do dia 23/08/2021</div>
+    <h1>Conversor de moeda (BRL⇄USD)</h1> <br>
+    Valor:
+    <input type="number" name="simp" id="simp"> <!--input de valor-->
+    ⇄
+    <input list="Moeda" id="unico"> <!--input de moeda-->
+    <input type="submit" value="Converter" onclick="calcular()"> <br>
+    <p id=obj>Insira os dados solicitados.</p>
+    <div id="marca">&copy; <strong>RodolfoDevs</strong></div>
+    <datalist id=Moeda>
+        <option value="Real (BRL)" id="um" ></option>
+        <option value="Dólar (USD)" id="dois"></option>
+    </datalist>
+
+    <script>
+        function calcular() {
+        var sub = document.getElementById('obj') //div 'Insira os dados solicitados.'
+        var prova = document.getElementById('unico') //referencia ao input de moeda
+        var prova2 = String(prova.value)
+            if (prova2 == 'Real (BRL)') {
+                var realselec = document.getElementById('simp')
+                var realselec2 = Number(realselec.value)
+                var deus = realselec2 * 5.40 //cotação dólar -> real
+                sub.innerText = `O valor do seu câmbio é: ${deus} reais.`
+            } else if (prova2 == 'Dólar (USD)') {
+                var dolarselec = document.getElementById('simp')
+                var dolarselec2 = Number(dolarselec.value)
+                var djabo = dolarselec2 * 0.19 //cotação real -> dólar
+                sub.innerText = `O valor do seu câmbio é: ${djabo} doláres`
+            } else {
+                sub.innerText = `Selecione uma moeda`
+            }
+        }
+    </script>
+</body>
+</html>

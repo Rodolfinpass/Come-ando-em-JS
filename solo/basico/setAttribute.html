@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id=tres value="5,38" onfocus="javascript:(this.value=='5,38'?this.value = '':null);" 
+    onblur="javascript:(this.value==''?this.value = '5,38':null);"/>
+    <input type="submit" onclick="teste()">
+
+    <script>
+        function teste() {
+            var input = document.getElementById('tres')
+            input.removeAttribute("value")
+            input.setAttribute("value", "12")
+            input.setAttribute("onfocus","javascript:(this.value=='12'?this.value = '':null)")
+            input.setAttribute("onblur","javascript:(this.value==''?this.value = '12':null)")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testanto tabela</title>
+    <style>
+        caption {
+            /* caption dentro da tabela (título da tabela)*/
+            font: normal 20pt Arial;
+            margin: 25px;
+        }
+
+        table {
+            /* tabela */
+            border: black solid;
+            border-collapse: collapse;
+            border-width: 1px;
+            width: 80%;
+            margin-left: 200px;
+        }
+
+        thead {
+            /* linha  do cabeçalho da tabela */
+            background-color: rgb(151, 61, 235);
+        }
+
+        th {
+            /* coluna do cabeçalho */
+            text-align: left;
+        }
+
+        tr {
+            /* linha da tabela */
+            height: 30px;
+        }
+
+        tr.vivo {
+            background-color: rgb(218, 210, 210);
+        }
+
+        tr.morto {
+            background-color: white;
+        }
+
+        table th,
+        table td {
+            padding: 12px 15px;
+        }
+
+        div#obj {
+            font: normal 20pt Arial;
+        }
+        input {
+            height: 24px;
+        }
+        input#aceita {
+            height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="obj"><strong>Cadastrar compra</strong></div> <br>
+
+    <input type="text" id="ID" placeholder="ID">
+    <input type="text" id="Nome" placeholder="Nome">
+    <input type="number" id="estoque" placeholder="Em estoque">
+    <input type="number" id="puni" placeholder="Preço unitário">
+    <input type="number" id="valor" placeholder="Valor de Entrada">
+    <input type="submit" id="aceita" value="Adicionar" onclick="executa()">
+
+    <table id="tabelado">
+
+        <caption><strong>Entradas</strong></caption>
+
+        <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Em estoque</th>
+            <th>Preço unitário</th>
+            <th>Valor de Entrada</th>
+        </thead>
+
+        <tbody id="espe">
+            <tr class="vivo">
+                <td>LS111</td>
+                <td>Lápis</td>
+                <td>12</td>
+                <td>Faber-Castell</td>
+                <td>08/09/2021</td>
+            </tr>
+
+            <tr class="morto">
+                <td>PO222</td>
+                <td>Par de Sapato</td>
+                <td>2</td>
+                <td>Adidas</td>
+                <td>09/09/2021</td>
+            </tr>
+
+            <tr class="vivo">
+                <td>SA333</td>
+                <td>Salsicha</td>
+                <td>40</td>
+                <td>Sadia</td>
+                <td>09/09/2021</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+        function executa() {
+
+            var ID = String(document.getElementById('ID').value)
+            var Nome = String(document.getElementById('Nome').value)
+            var Estoque = Number(document.getElementById('estoque').value)
+            var PreUni = String(document.getElementById('puni').value)
+            var Valor = Number(document.getElementById('valor').value)
+
+            if (ID, Nome, Estoque, PreUni, Valor != '') {
+
+                var tabela = document.getElementById('tabelado')
+
+                tabela.innerHTML += [
+                    '<tr>',
+                    `<td>${ID}</td>`,
+                    `<td>${Nome}</td>`,
+                    `<td>${Estoque}</td>`,
+                    `<td>${PreUni}</td>`,
+                    `<td>R$${Valor}</td>`,
+                    '</tr>'
+                ].join("")
+
+                document.getElementById('ID').value = ''
+                document.getElementById('Nome').value = ''
+                document.getElementById('estoque').value = ''
+                document.getElementById('puni').value = ''
+                document.getElementById('valor').value = ''
+            } else {
+                alert('Insira os dados necessários e tente novamente.')
+            }
+        }
+    </script>
+</body>
+
+</html>

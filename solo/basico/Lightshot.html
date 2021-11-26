@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+</head>
+<body>
+    
+    <div>Aguarde...</div>
+    <script>
+
+        const aleat = [
+            '1','2','3','4','5','6','7','8','9','0','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
+        ]
+        const P = aleat[Math.floor(Math.random() * aleat.length)];
+        const S = aleat[Math.floor(Math.random() * aleat.length)];
+        const T = aleat[Math.floor(Math.random() * aleat.length)];
+        const Q = aleat[Math.floor(Math.random() * aleat.length)];
+        const QI = aleat[Math.floor(Math.random() * aleat.length)];
+        const SX = aleat[Math.floor(Math.random() * aleat.length)];
+
+        setInterval(function() {
+
+            var janela = window.open(`https://prnt.sc/${P}${S}${T}${Q}${QI}${SX}`, '_blank')
+            location.reload(true)
+    
+        }, 5000);
+        
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultivo</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <fieldset id="fieldset">
+
+        <input list="stations" id="seasons" oninput="primeiro()" placeholder="Selecione uma estação">
+        <datalist id="stations">
+            <option value="Primavera">
+            <option value="Verão">
+            <option value="Outono">
+        </datalist>
+
+        <p> Profissão cultivador </p>
+        <input type="radio" name="grupinho" id="Sim" onclick="cultivaSIM()"> Sim <br>
+        <input type="radio" name="grupinho" id="Não" onclick="cultivaNAO()"> Não <br>
+        <br>
+        <div id="PRIMAVERA" hidden>
+
+            Slots: <input type="number" id="slots1">
+            Cultivo: <input list="planPrimavera" id="primavera">
+            <input type="submit" value="Calcular" id="submit1">
+
+            <datalist id="planPrimavera">
+                <option value="Chirivia"></option>
+                <option value="Alho"></option>
+                <option value="Batata"></option>
+                <option value="Tulipa"></option>
+                <option value="Couve"></option>
+                <option value="Jasmin-Azul"></option>
+                <option value="Couve-Flor"></option>
+                <option value="Ruibarbo"></option>
+            </datalist> <br> <br>
+
+            <div id="pc1">Preço de compra:</div>
+            <div id="pv1">Preço de venda:</div>
+            <div id="lu1">Lucro:</div>
+
+        </div>
+        <div id="VERÃO" hidden>
+
+            Slots: <input type="number" id="slots2">
+            Cultivo: <input list="planVerao" id="verao">
+            <input type="submit" value="Calcular" id="submit2">
+
+            <datalist id="planVerao">
+                <option value="Melão"></option>
+                <option value="Papoula"></option>
+                <option value="Rabanete"></option>
+                <option value="Repolho roxo"></option>
+                <option value="Carambola"></option>
+                <option value="Flor-Miçanga"></option>
+                <option value="Trigo"></option>
+            </datalist> <br> <br>
+
+            <div id="pc2">Preço de compra:</div>
+            <div id="pv2">Preço de venda:</div>
+            <div id="lu2">Lucro:</div>
+
+        </div>
+        <div id="OUTONO" hidden>
+
+            Slots: <input type="number" id="slots3">
+            Cultivo: <input list="planOutono" id="outono">
+            <input type="submit" value="Calcular" id="submit3">
+
+            <datalist id="planOutono">
+                <option value="Amaranto"></option>
+                <option value="Alcachofra"></option>
+                <option value="Beterraba"></option>
+                <option value="Couve Chinesa"></option>
+                <option value="Rosa-de-Fada"></option>
+                <option value="Abóbora"></option>
+                <option value="Cereja de Joia Doce"></option>
+                <option value="Trigo"></option>
+                <option value="Inhame"></option>
+            </datalist> <br> <br>
+
+            <div id="pc3">Preço de compra:</div>
+            <div id="pv3">Preço de venda:</div>
+            <div id="lu3">Lucro:</div>
+
+        </div>
+    </fieldset>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

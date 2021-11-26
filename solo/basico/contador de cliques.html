@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="buto" onclick="teste()">Click</button>
+    <p id="obj">Olá</p>
+
+    <script>
+
+        var n = 0
+
+        function teste() {
+
+            var txt = document.getElementById('obj')
+            n = n + 1
+            txt.innerText = `Você clicou ${n} vezes.`
+            
+        }
+    </script>
+</body>
+</html>

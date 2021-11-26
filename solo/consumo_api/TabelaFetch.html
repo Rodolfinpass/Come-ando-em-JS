@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testanto Fetch</title>
+    <style>
+        caption { /* caption dentro da tabela (título da tabela)*/
+            font: normal 20pt Arial;
+            margin: 30px;
+        }
+        table { /* tabela */
+            border: black solid;
+            border-collapse: collapse;
+            border-width: 1px;
+            width: 70%;
+            margin: auto;
+        }
+        thead {
+            /* linha  do cabeçalho da tabela */
+            background-color: rgb(151, 61, 235);
+        }
+        th {
+            /* coluna do cabeçalho */
+            text-align: left;
+        }
+        tr {
+            /* linha da tabela */
+            height: 30px;
+        }
+        table th, table td { /* distanciamento dos caracteres em relação às bordas da tabela */
+            padding: 12px 15px;
+        }
+        div#obj { /* título */
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="obj"><strong>Consumo de API usando Fetch</strong></div> <br>
+    <input type="submit" id="aceita" value="Consumir API" onclick="Consumo()">
+        
+    <table id="tabelado">
+
+        <caption><strong>Entradas</strong></caption>
+
+        <thead>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Em estoque</th>
+            <th>Preço unitário</th>
+            <th>Valor de entrada</th>
+        </thead>
+
+    </table>
+    
+    <script>
+        function Consumo() {
+            async function getContent() {
+                try {
+                    const response = await fetch('https://marcelos-system.herokuapp.com/api/v1/products/')
+                    const data = await response.json()
+
+                    show(data)
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+            getContent()
+
+            function show(users) {
+
+                let taberna = document.getElementById('tabelado')
+
+                for (let user of users) {
+
+                    taberna.innerHTML +=
+                        `<tr>
+                        <td>${user.internalCode}</td>
+                        <td>${user.productName}</td>
+                        <td>${user.stock}</td>
+                        <td>${user.unitPrice}</td>
+                        <td>${user.entryValue}</td>
+                    </tr>`
+                }
+            }
+        }
+    //dale porco
+    </script>
+</body>
+
+</html>

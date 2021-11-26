@@ -1,0 +1,64 @@
+<!DOCTYPE html> <!--17/08/2021-->
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor BRL-USD V2</title>
+    <!--Problema: falta saber trocar o valor padrão do input number que por padrão é 0-->
+    <style>
+        div#marca {
+            padding-top: 384px;
+            font: normal 12pt Arial;
+        }
+       div#rap {
+           font-size: 13px;
+           padding-left: 1138px;
+       }
+    </style>
+</head>
+<body>
+    <div id="rap">*Cotação proveniente do dia 23/08/2021</div>
+    <h1>Conversor de moeda (BRL⇄USD)</h1> <br>
+    Valor: <input type="number" name="simp" id="simp" >
+    ⇄
+    <input list="Moeda" id="unico">
+    <input type="submit" value="Converter" onclick="calcular()"> <br> <br> <br>
+    <div id=obj>Insira os dados solicitados.</div>
+    <div id="nice"></div>
+    <div id="marca">&copy; <strong>RodolfoDevs</strong></div>
+
+    <datalist id=Moeda>
+        <option value="Real (BRL)" id="um" ></option>
+        <option value="Dólar (USD)" id="dois"></option>
+    </datalist>
+
+    <script>
+        function calcular() {
+            var sub = document.getElementById('obj')
+            var check = document.getElementById('simp')
+            var checked = Number(check.value)
+            var prova = document.getElementById('unico')
+            var prova2 = String(prova.value)
+            if (checked <= -1) {
+                sub.innerText = 'Você inseriu um valor negativo. Você tem alguma dívida?'
+                nice.innerText = 'Tente novamente, desta vez, use um valor válido.'
+            } else if (prova2 == 'Real (BRL)' && checked >= 1 || checked <= -1) { //se a moeda for BRL e o valor inserido for maior ou igual que 1 ou o valor inserido for menor ou igual que -1, o primeiro bloco será executado...
+                var realselec = document.getElementById('simp')
+                var realselec2 = Number(realselec.value)
+                var deus = realselec2 * 5.40 //cotação dólar -> real (atualizar td dia)
+                sub.innerText = `O valor do seu câmbio é de: ${deus} reais.`
+            } else if (prova2 == 'Dólar (USD)' && checked >= 1 || checked <= -1) { //se a moeda for USD e o valor inserido for maior ou igual que 1 ou o valor inserido for menor ou igual que -1, o primeiro bloco será executado...
+                var dolarselec = document.getElementById('simp')
+                var dolarselec2 = Number(dolarselec.value)
+                var djabo = dolarselec2 * 0.19 //cotação real -> dólar (atualizar td dia)
+                sub.innerText = `O valor do seu câmbio é de: ${djabo} doláres.`
+            } else if(checked === 0) { //se o valor inserido for igual a 0 ou nnenhum valor for inserido, aparecerá um aviso para que a troca de valor seja efetuada
+                sub.innerText = 'Insira um valor válido e tente novamente!'
+            } else if(prova2 == 0) { //se nenhuma moeda for selecionada, será solicitado a seleção de um tipo de moeda
+                sub.innerText = 'Insira uma moeda e tente novamente!'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="objto">Aoba zezão</p> 
+    <input type="submit" value="Tenta" onclick="exec()"> <br> <br>
+    <div>Quando clicar no "Tenta", o "Aoba zezão" será substituido por "Olá ${valor inserido anteriormente no input da página anterior}</div>
+    <script>
+
+        function exec() {
+
+            var robo = localStorage.getItem("cristo")
+            var txt = document.getElementById('objto')
+            txt.innerText = `Olá ${robo}`
+        }
+
+    </script>
+</body>
+</html>

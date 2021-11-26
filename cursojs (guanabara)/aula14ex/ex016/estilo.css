@@ -1,0 +1,29 @@
+body {
+    background: rgb(26, 102, 165);
+    font: normal 15pt Arial;
+}
+input {
+    margin: 7px;
+}
+input#iniciacao {
+    margin-left: 9px;
+}
+input#final {
+    margin-left: 23.5px;
+}
+header {
+    color: white;
+    text-align: center;
+}
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+}
+footer {
+    color: white;
+    text-align: center;
+}

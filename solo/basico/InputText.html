@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual é seu nome?</title> 
+</head>
+<body>
+    <input type="text" name="nome" id="nome">
+    <input type="submit" onclick="atividade()">
+    <p id=para>Resultado</p>
+    <script> //code descobrindo como se usa e trata informação input de texto
+        function atividade() {
+        var nome = window.document.getElementById('nome')
+        var para2 = window.document.getElementById('para')
+        var nome2 = String(nome.value) //sempre transformar a informação proveniente do input em string para ser usada em innerText
+        para2.innerText = (`Seu nome é ${nome2}!`)
+        }
+    </script>
+</body>
+</html>

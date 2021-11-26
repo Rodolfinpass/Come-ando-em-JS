@@ -1,0 +1,4 @@
+Atualizar valores automaticamente todos os dias usando uma API 
+
+
+Fazer conversor multiplo de moedas 
